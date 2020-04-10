@@ -1,0 +1,68 @@
+{
+  "name": "react-saijo-ui",
+  "version": "1.0.0",
+  "description": "react simple component library",
+  "main": "build/index.js",
+  "module": "build/index.es.js",
+  "files": [
+    "build"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "test": "jest --watch",
+    "test:once": "jest",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saijo-shota-biz/react-saijo-ui.git"
+  },
+  "keywords": [
+    "React",
+    "Typescript",
+    "Component",
+    "Library",
+    "Sass",
+    "Storybook"
+  ],
+  "author": "saijo-shota-biz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/saijo-shota-biz/react-saijo-ui/issues"
+  },
+  "homepage": "https://github.com/saijo-shota-biz/react-saijo-ui#readme",
+  "dependencies": {
+    "babel-preset-react-app": "^9.1.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@storybook/addon-actions": "^5.3.18",
+    "@storybook/addon-links": "^5.3.18",
+    "@storybook/addons": "^5.3.18",
+    "@storybook/react": "^5.3.18",
+    "@types/enzyme": "^3.10.5",
+    "@types/enzyme-adapter-react-16": "^1.0.6",
+    "@types/jest": "^25.2.1",
+    "@types/react": "^16.9.34",
+    "babel-loader": "^8.1.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "enzyme-to-json": "^3.4.4",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^25.3.0",
+    "rollup": "^2.4.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-peer-deps-external": "^2.2.2",
+    "rollup-plugin-sass": "^1.2.2",
+    "rollup-plugin-typescript2": "^0.27.0",
+    "sass-loader": "^8.0.2",
+    "ts-jest": "^25.3.1",
+    "typescript": "^3.8.3"
+  },
+  "peerDependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}
