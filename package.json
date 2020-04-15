@@ -8,6 +8,7 @@
     "build"
   ],
   "scripts": {
+    "start": "start-storybook -p 6006",
     "build": "rollup -c",
     "test": "jest --watch",
     "test:once": "jest",
@@ -83,5 +84,8 @@
       "eslint --fix",
       "git add"
     ]
+  },
+  "dependencies": {
+    "rollup-plugin-copy": "^3.3.0"
   }
 }
