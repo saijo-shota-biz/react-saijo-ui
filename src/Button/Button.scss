@@ -12,6 +12,7 @@
   font-weight: inherit;
 }
 
+// base
 .el_btn {
   @include reset();
   display: inline-block;
@@ -19,8 +20,6 @@
   min-width: 15rem;
   padding: 1rem 0.75rem;
   font-size: 1.125rem;
-  background-color: $main-color;
-  color: $text-color;
   border: 0.2rem solid transparent;
   text-decoration: none;
   text-align: center;
@@ -28,8 +27,72 @@
 
   &:focus,
   &:hover {
-    background-color: $base-color;
-    color: $main-color;
     border-color: currentColor;
+  }
+
+  &__colorDefault {
+    background-color: $default-color;
+    color: $base-color;
+
+    &:focus,
+    &:hover {
+      background-color: $base-color;
+      color: $default-color;
+    }
+  }
+
+  // main-color
+  &__colorMain {
+    background-color: $main-color;
+    color: $base-color;
+
+    &:focus,
+    &:hover {
+      background-color: $base-color;
+      color: $main-color;
+    }
+  }
+
+  // dark-color
+  &__colorDark {
+    background-color: $main-color-dark;
+    color: $base-color;
+
+    &:focus,
+    &:hover {
+      background-color: $base-color;
+      color: $main-color-dark;
+    }
+  }
+
+  // light-color
+  &__colorLight {
+    background-color: $main-color-light;
+    color: $base-color;
+
+    &:focus,
+    &:hover {
+      background-color: $base-color;
+      color: $main-color-light;
+    }
+  }
+
+  // light-color
+  &__colorAccent {
+    background-color: $accent-color;
+    color: $base-color;
+
+    &:focus,
+    &:hover {
+      background-color: $base-color;
+      color: $accent-color;
+    }
+  }
+
+  &__disabled {
+    background-color: $disabled-color;
+    color: $default-color;
+    border-color: $disabled-color;
+    pointer-events: none;
   }
 }
