@@ -1,5 +1,5 @@
 {
-  "name": "react-saijo-ui",
+  "name": "react-simplified-ui",
   "version": "1.0.0",
   "description": "react simple component library",
   "main": "build/index.js",
@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/saijo-shota-biz/react-saijo-ui.git"
+    "url": "git+https://github.com/saijo-shota-biz/react-simplified-ui.git"
   },
   "keywords": [
     "React",
@@ -31,9 +31,9 @@
   "author": "saijo-shota-biz",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/saijo-shota-biz/react-saijo-ui/issues"
+    "url": "https://github.com/saijo-shota-biz/react-simplified-ui/issues"
   },
-  "homepage": "https://github.com/saijo-shota-biz/react-saijo-ui#readme",
+  "homepage": "https://github.com/saijo-shota-biz/react-simplified-ui#readme",
   "devDependencies": {
     "babel-eslint": "^10.1.0",
     "babel-preset-react-app": "^9.1.2",
