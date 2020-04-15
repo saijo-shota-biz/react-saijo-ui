@@ -1,0 +1,35 @@
+@import "../_variables";
+
+@mixin reset {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  font-weight: inherit;
+}
+
+.el_btn {
+  @include reset();
+  display: inline-block;
+  max-width: 100%;
+  min-width: 15rem;
+  padding: 1rem 0.75rem;
+  font-size: 1.125rem;
+  background-color: $main-color;
+  color: $text-color;
+  border: 0.2rem solid transparent;
+  text-decoration: none;
+  text-align: center;
+  transition: 0.25s;
+
+  &:focus,
+  &:hover {
+    background-color: $base-color;
+    color: $main-color;
+    border-color: currentColor;
+  }
+}
