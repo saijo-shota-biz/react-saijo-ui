@@ -8,6 +8,7 @@ export type ButtonProp = {
   shape: Shape;
   block: boolean;
   outline: boolean;
+  icon: Icon;
   disabled: boolean;
   children: ReactNode;
   onClick: () => void;
@@ -33,6 +34,12 @@ export enum Shape {
   CIRCLE = "Circle",
 }
 
+export enum Icon {
+  LEFT = "Left",
+  RIGHT = "Right",
+  ONLY = "Only",
+}
+
 const Button: React.FC<ButtonProp> = ({
   color,
   size,
@@ -40,6 +47,7 @@ const Button: React.FC<ButtonProp> = ({
   block,
   outline,
   disabled,
+  icon,
   children,
   onClick,
 }) => {
@@ -50,6 +58,7 @@ const Button: React.FC<ButtonProp> = ({
     shape ? `el_btn__shape${shape}` : "",
     block ? "el_btn__block" : "",
     outline ? "el_btn__outline" : "",
+    icon ? `el_btn__icon${icon}` : "",
     disabled ? "el_btn__disabled" : "",
   ].join(" ");
 
@@ -77,6 +86,7 @@ Button.propTypes = {
   block: PropTypes.bool,
   outline: PropTypes.bool,
   disabled: PropTypes.bool,
+  icon: PropTypes.oneOf(Object.keys(Icon).map((key) => Icon[key])),
   children: PropTypes.node.isRequired,
   onClick: PropTypes.func,
 };

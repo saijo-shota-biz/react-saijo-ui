@@ -1,5 +1,5 @@
 import React from "react";
-import Button, { Color, Size, Shape } from "./Button";
+import Button, { Color, Size, Shape, Icon } from "./Button";
 import { action } from "@storybook/addon-actions";
 
 export default {
@@ -109,6 +109,39 @@ export const outline = () => (
     <diiv style={{ margin: "10px" }}></diiv>
     <Button color={Color.ACCENT} outline onClick={action("clicked")}>
       Accent Outline Button
+    </Button>
+  </>
+);
+
+export const icon = () => (
+  <>
+    <Button
+      color={Color.MAIN}
+      outline
+      icon={Icon.RIGHT}
+      onClick={action("clicked")}
+    >
+      <i className="material-icons">accessibility</i>
+      icon btn
+    </Button>
+    <diiv style={{ margin: "10px" }}></diiv>
+    <Button
+      color={Color.MAIN}
+      outline
+      icon={Icon.LEFT}
+      onClick={action("clicked")}
+    >
+      <i className="material-icons">accessibility</i>
+      icon btn
+    </Button>
+    <diiv style={{ margin: "10px" }}></diiv>
+    <Button
+      color={Color.MAIN}
+      outline
+      icon={Icon.ONLY}
+      onClick={action("clicked")}
+    >
+      <i className="material-icons">accessibility</i>
     </Button>
   </>
 );

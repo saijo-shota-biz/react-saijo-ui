@@ -202,6 +202,7 @@
     &:hover {
       background-color: $default-color;
       color: $base-color;
+      border: 0.2rem solid transparent;
     }
 
     &.el_btn__colorDefault {
@@ -257,6 +258,49 @@
         background-color: $accent-color;
         color: $base-color;
       }
+    }
+  }
+
+  // **********************************************
+  // disabled
+  // **********************************************
+  &__iconOnly {
+    position: relative;
+    padding: 1.85rem 0;
+    vertical-align: middle;
+    & > i {
+      font-size: 1.5rem;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  &__iconRight {
+    position: relative;
+    padding-right: 2.3rem;
+    padding-left: 2.3rem;
+
+    & > i {
+      position: absolute;
+      font-size: 1.5rem;
+      top: 50%;
+      right: 0.5rem;
+      transform: translateY(-50%);
+    }
+  }
+
+  &__iconLeft {
+    position: relative;
+    padding-right: 2.3rem;
+    padding-left: 2.3rem;
+
+    & > i {
+      position: absolute;
+      font-size: 1.5rem;
+      top: 50%;
+      left: 0.5rem;
+      transform: translateY(-50%);
     }
   }
 
