@@ -191,6 +191,76 @@
   }
 
   // **********************************************
+  // outline
+  // **********************************************
+  &__outline {
+    background-color: $base-color;
+    color: $default-color;
+    border-color: currentColor;
+
+    &:focus,
+    &:hover {
+      background-color: $default-color;
+      color: $base-color;
+    }
+
+    &.el_btn__colorDefault {
+      background-color: $base-color;
+      color: $default-color;
+
+      &:focus,
+      &:hover {
+        background-color: $default-color;
+        color: $base-color;
+      }
+    }
+
+    &.el_btn__colorMain {
+      background-color: $base-color;
+      color: $main-color;
+
+      &:focus,
+      &:hover {
+        background-color: $main-color;
+        color: $base-color;
+      }
+    }
+
+    &.el_btn__colorDark {
+      background-color: $base-color;
+      color: $main-color-dark;
+
+      &:focus,
+      &:hover {
+        background-color: $main-color-dark;
+        color: $base-color;
+      }
+    }
+
+    &.el_btn__colorLight {
+      background-color: $base-color;
+      color: $main-color-light;
+
+      &:focus,
+      &:hover {
+        background-color: $main-color-light;
+        color: $base-color;
+      }
+    }
+
+    &.el_btn__colorAccent {
+      background-color: $base-color;
+      color: $accent-color;
+
+      &:focus,
+      &:hover {
+        background-color: $accent-color;
+        color: $base-color;
+      }
+    }
+  }
+
+  // **********************************************
   // disabled
   // **********************************************
   &__disabled {

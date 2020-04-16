@@ -88,3 +88,27 @@ export const block = () => (
     Block Button
   </Button>
 );
+
+export const outline = () => (
+  <>
+    <Button color={Color.DEFAULT} outline onClick={action("clicked")}>
+      Default Outline Button
+    </Button>
+    <diiv style={{ margin: "10px" }}></diiv>
+    <Button color={Color.MAIN} outline onClick={action("clicked")}>
+      Main Outline Button
+    </Button>
+    <diiv style={{ margin: "10px" }}></diiv>
+    <Button color={Color.DARK} outline onClick={action("clicked")}>
+      Dark Outline Button
+    </Button>
+    <diiv style={{ margin: "10px" }}></diiv>
+    <Button color={Color.LIGHT} outline onClick={action("clicked")}>
+      Light Outline Button
+    </Button>
+    <diiv style={{ margin: "10px" }}></diiv>
+    <Button color={Color.ACCENT} outline onClick={action("clicked")}>
+      Accent Outline Button
+    </Button>
+  </>
+);

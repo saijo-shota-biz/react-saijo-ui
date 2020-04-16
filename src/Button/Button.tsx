@@ -7,6 +7,7 @@ export type ButtonProp = {
   size: Size;
   shape: Shape;
   block: boolean;
+  outline: boolean;
   disabled: boolean;
   children: ReactNode;
   onClick: () => void;
@@ -37,6 +38,7 @@ const Button: React.FC<ButtonProp> = ({
   size,
   shape,
   block,
+  outline,
   disabled,
   children,
   onClick,
@@ -47,6 +49,7 @@ const Button: React.FC<ButtonProp> = ({
     `el_btn__size${size}`,
     shape ? `el_btn__shape${shape}` : "",
     block ? "el_btn__block" : "",
+    outline ? "el_btn__outline" : "",
     disabled ? "el_btn__disabled" : "",
   ].join(" ");
 
@@ -60,8 +63,9 @@ const Button: React.FC<ButtonProp> = ({
 Button.defaultProps = {
   color: Color.DEFAULT,
   size: Size.MEDIUM,
-  disabled: false,
   block: false,
+  outline: false,
+  disabled: false,
   children: "",
   onClick: () => {},
 };
@@ -70,8 +74,9 @@ Button.propTypes = {
   color: PropTypes.oneOf(Object.keys(Color).map((key) => Color[key])),
   size: PropTypes.oneOf(Object.keys(Size).map((key) => Size[key])),
   shape: PropTypes.oneOf(Object.keys(Shape).map((key) => Shape[key])),
-  disabled: PropTypes.bool,
   block: PropTypes.bool,
+  outline: PropTypes.bool,
+  disabled: PropTypes.bool,
   children: PropTypes.node.isRequired,
   onClick: PropTypes.func,
 };
