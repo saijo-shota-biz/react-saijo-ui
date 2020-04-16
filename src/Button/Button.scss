@@ -22,11 +22,25 @@
   text-align: center;
   transition: 0.25s;
 
+  // color
+  background-color: $default-color;
+  color: $base-color;
+
   &:focus,
   &:hover {
+    background-color: $base-color;
+    color: $default-color;
     border-color: currentColor;
   }
 
+  // size
+  min-width: 200px;
+  padding: 1rem 0.75rem;
+  font-size: 1.125rem;
+
+  // **********************************************
+  // Color
+  // **********************************************
   &__colorDefault {
     background-color: $default-color;
     color: $base-color;
@@ -38,7 +52,6 @@
     }
   }
 
-  // main-color
   &__colorMain {
     background-color: $main-color;
     color: $base-color;
@@ -50,7 +63,6 @@
     }
   }
 
-  // dark-color
   &__colorDark {
     background-color: $main-color-dark;
     color: $base-color;
@@ -62,7 +74,6 @@
     }
   }
 
-  // light-color
   &__colorLight {
     background-color: $main-color-light;
     color: $base-color;
@@ -74,7 +85,6 @@
     }
   }
 
-  // accent-color
   &__colorAccent {
     background-color: $accent-color;
     color: $base-color;
@@ -86,6 +96,9 @@
     }
   }
 
+  // **********************************************
+  // Size
+  // **********************************************
   &__sizeSmall {
     min-width: 100px;
     padding: 0.75rem 0.5rem;
@@ -102,6 +115,72 @@
     min-width: 300px;
     padding: 1.25rem 1rem;
     font-size: 1.25rem;
+  }
+
+  // **********************************************
+  // shape
+  // **********************************************
+  &__shapeRounded {
+    border-radius: 20px;
+  }
+
+  &__shapeSquare {
+    &.el_btn__sizeSmall {
+      min-width: 100px;
+      max-width: 100px;
+      min-height: 100px;
+      max-height: 100px;
+      padding: 0.75rem 0.5rem;
+      font-size: 1rem;
+    }
+
+    &.el_btn__sizeMedium {
+      min-width: 200px;
+      max-width: 200px;
+      min-height: 200px;
+      max-height: 200px;
+      padding: 1rem 0.75rem;
+      font-size: 1.125rem;
+    }
+
+    &.el_btn__sizeLarge {
+      min-width: 300px;
+      max-width: 300px;
+      min-height: 300px;
+      max-height: 300px;
+      padding: 1.25rem 1rem;
+      font-size: 1.25rem;
+    }
+  }
+
+  &__shapeCircle {
+    border-radius: 50%;
+    &.el_btn__sizeSmall {
+      min-width: 100px;
+      max-width: 100px;
+      min-height: 100px;
+      max-height: 100px;
+      padding: 0.75rem 0.5rem;
+      font-size: 1rem;
+    }
+
+    &.el_btn__sizeMedium {
+      min-width: 200px;
+      max-width: 200px;
+      min-height: 200px;
+      max-height: 200px;
+      padding: 1rem 0.75rem;
+      font-size: 1.125rem;
+    }
+
+    &.el_btn__sizeLarge {
+      min-width: 300px;
+      max-width: 300px;
+      min-height: 300px;
+      max-height: 300px;
+      padding: 1.25rem 1rem;
+      font-size: 1.25rem;
+    }
   }
 
   &__disabled {

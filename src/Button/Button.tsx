@@ -3,14 +3,15 @@ import "./Button.scss";
 import PropTypes from "prop-types";
 
 export type ButtonProp = {
-  color: ButtonColor;
+  color: Color;
   size: Size;
+  shape: Shape;
   disabled: boolean;
   children: ReactNode;
   onClick: () => void;
 };
 
-export enum ButtonColor {
+export enum Color {
   MAIN = "Main",
   DARK = "Dark",
   LIGHT = "Light",
@@ -24,9 +25,16 @@ export enum Size {
   LARGE = "Large",
 }
 
+export enum Shape {
+  ROUNDED = "Rounded",
+  SQUARE = "Square",
+  CIRCLE = "Circle",
+}
+
 const Button: React.FC<ButtonProp> = ({
   color,
   size,
+  shape,
   disabled,
   children,
   onClick,
@@ -35,6 +43,7 @@ const Button: React.FC<ButtonProp> = ({
     "el_btn",
     `el_btn__color${color}`,
     `el_btn__size${size}`,
+    shape ? `el_btn__shape${shape}` : "",
     disabled ? "el_btn__disabled" : "",
   ].join(" ");
 
@@ -46,7 +55,7 @@ const Button: React.FC<ButtonProp> = ({
 };
 
 Button.defaultProps = {
-  color: ButtonColor.DEFAULT,
+  color: Color.DEFAULT,
   size: Size.MEDIUM,
   disabled: false,
   children: "",
@@ -54,10 +63,9 @@ Button.defaultProps = {
 };
 
 Button.propTypes = {
-  color: PropTypes.oneOf(
-    Object.keys(ButtonColor).map((key) => ButtonColor[key])
-  ),
+  color: PropTypes.oneOf(Object.keys(Color).map((key) => Color[key])),
   size: PropTypes.oneOf(Object.keys(Size).map((key) => Size[key])),
+  shape: PropTypes.oneOf(Object.keys(Shape).map((key) => Shape[key])),
   disabled: PropTypes.bool,
   children: PropTypes.node.isRequired,
   onClick: PropTypes.func,
