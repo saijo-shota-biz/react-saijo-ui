@@ -10,7 +10,7 @@ export const base = () => (
   <Button onClick={action("clicked")}>Base Button</Button>
 );
 
-export const base_disabled = () => (
+export const disabled = () => (
   <Button disabled onClick={action("clicked")}>
     Disabled Button
   </Button>
@@ -81,4 +81,10 @@ export const shape = () => (
       Circle Button
     </Button>
   </>
+);
+
+export const block = () => (
+  <Button block onClick={action("clicked")}>
+    Block Button
+  </Button>
 );
