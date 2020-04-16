@@ -1,0 +1,316 @@
+@import "../_variables";
+
+@mixin reset {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  font-weight: inherit;
+}
+
+// base
+.el_btn {
+  @include reset();
+  display: inline-block;
+  max-width: 100%;
+  border: 0.2rem solid transparent;
+  text-decoration: none;
+  text-align: center;
+  transition: 0.25s;
+
+  // color
+  background-color: $default-color;
+  color: $base-color;
+
+  &:focus,
+  &:hover {
+    background-color: $base-color;
+    color: $default-color;
+    border-color: currentColor;
+  }
+
+  // size
+  min-width: 200px;
+  padding: 1rem 0.75rem;
+  font-size: 1.125rem;
+
+  // **********************************************
+  // Color
+  // **********************************************
+  &__colorDefault {
+    background-color: $default-color;
+    color: $base-color;
+
+    &:focus,
+    &:hover {
+      background-color: $base-color;
+      color: $default-color;
+    }
+  }
+
+  &__colorMain {
+    background-color: $main-color;
+    color: $base-color;
+
+    &:focus,
+    &:hover {
+      background-color: $base-color;
+      color: $main-color;
+    }
+  }
+
+  &__colorDark {
+    background-color: $main-color-dark;
+    color: $base-color;
+
+    &:focus,
+    &:hover {
+      background-color: $base-color;
+      color: $main-color-dark;
+    }
+  }
+
+  &__colorLight {
+    background-color: $main-color-light;
+    color: $base-color;
+
+    &:focus,
+    &:hover {
+      background-color: $base-color;
+      color: $main-color-light;
+    }
+  }
+
+  &__colorAccent {
+    background-color: $accent-color;
+    color: $base-color;
+
+    &:focus,
+    &:hover {
+      background-color: $base-color;
+      color: $accent-color;
+    }
+  }
+
+  // **********************************************
+  // Size
+  // **********************************************
+  &__sizeSmall {
+    min-width: 100px;
+    padding: 0.75rem 0.5rem;
+    font-size: 1rem;
+  }
+
+  &__sizeMedium {
+    min-width: 200px;
+    padding: 1rem 0.75rem;
+    font-size: 1.125rem;
+  }
+
+  &__sizeLarge {
+    min-width: 300px;
+    padding: 1.25rem 1rem;
+    font-size: 1.25rem;
+  }
+
+  // **********************************************
+  // shape
+  // **********************************************
+  &__shapeRounded {
+    border-radius: 20px;
+  }
+
+  &__shapeSquare {
+    &.el_btn__sizeSmall {
+      min-width: 100px;
+      max-width: 100px;
+      min-height: 100px;
+      max-height: 100px;
+      padding: 0.75rem 0.5rem;
+      font-size: 1rem;
+    }
+
+    &.el_btn__sizeMedium {
+      min-width: 200px;
+      max-width: 200px;
+      min-height: 200px;
+      max-height: 200px;
+      padding: 1rem 0.75rem;
+      font-size: 1.125rem;
+    }
+
+    &.el_btn__sizeLarge {
+      min-width: 300px;
+      max-width: 300px;
+      min-height: 300px;
+      max-height: 300px;
+      padding: 1.25rem 1rem;
+      font-size: 1.25rem;
+    }
+  }
+
+  &__shapeCircle {
+    border-radius: 50%;
+    &.el_btn__sizeSmall {
+      min-width: 100px;
+      max-width: 100px;
+      min-height: 100px;
+      max-height: 100px;
+      padding: 0.75rem 0.5rem;
+      font-size: 1rem;
+    }
+
+    &.el_btn__sizeMedium {
+      min-width: 200px;
+      max-width: 200px;
+      min-height: 200px;
+      max-height: 200px;
+      padding: 1rem 0.75rem;
+      font-size: 1.125rem;
+    }
+
+    &.el_btn__sizeLarge {
+      min-width: 300px;
+      max-width: 300px;
+      min-height: 300px;
+      max-height: 300px;
+      padding: 1.25rem 1rem;
+      font-size: 1.25rem;
+    }
+  }
+
+  // **********************************************
+  // block
+  // **********************************************
+  &__block {
+    display: block;
+  }
+
+  // **********************************************
+  // outline
+  // **********************************************
+  &__outline {
+    background-color: $base-color;
+    color: $default-color;
+    border-color: currentColor;
+
+    &:focus,
+    &:hover {
+      background-color: $default-color;
+      color: $base-color;
+      border: 0.2rem solid transparent;
+    }
+
+    &.el_btn__colorDefault {
+      background-color: $base-color;
+      color: $default-color;
+
+      &:focus,
+      &:hover {
+        background-color: $default-color;
+        color: $base-color;
+      }
+    }
+
+    &.el_btn__colorMain {
+      background-color: $base-color;
+      color: $main-color;
+
+      &:focus,
+      &:hover {
+        background-color: $main-color;
+        color: $base-color;
+      }
+    }
+
+    &.el_btn__colorDark {
+      background-color: $base-color;
+      color: $main-color-dark;
+
+      &:focus,
+      &:hover {
+        background-color: $main-color-dark;
+        color: $base-color;
+      }
+    }
+
+    &.el_btn__colorLight {
+      background-color: $base-color;
+      color: $main-color-light;
+
+      &:focus,
+      &:hover {
+        background-color: $main-color-light;
+        color: $base-color;
+      }
+    }
+
+    &.el_btn__colorAccent {
+      background-color: $base-color;
+      color: $accent-color;
+
+      &:focus,
+      &:hover {
+        background-color: $accent-color;
+        color: $base-color;
+      }
+    }
+  }
+
+  // **********************************************
+  // disabled
+  // **********************************************
+  &__iconOnly {
+    position: relative;
+    padding: 1.85rem 0;
+    vertical-align: middle;
+    & > i {
+      font-size: 1.5rem;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  &__iconRight {
+    position: relative;
+    padding-right: 2.3rem;
+    padding-left: 2.3rem;
+
+    & > i {
+      position: absolute;
+      font-size: 1.5rem;
+      top: 50%;
+      right: 0.5rem;
+      transform: translateY(-50%);
+    }
+  }
+
+  &__iconLeft {
+    position: relative;
+    padding-right: 2.3rem;
+    padding-left: 2.3rem;
+
+    & > i {
+      position: absolute;
+      font-size: 1.5rem;
+      top: 50%;
+      left: 0.5rem;
+      transform: translateY(-50%);
+    }
+  }
+
+  // **********************************************
+  // disabled
+  // **********************************************
+  &__disabled {
+    background-color: $disabled-color;
+    color: $default-color;
+    border-color: $disabled-color;
+    pointer-events: none;
+  }
+}
