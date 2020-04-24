@@ -1,147 +1,122 @@
 import React from "react";
 import Button, { Color, Size, Shape, Icon } from "./Button";
 import { action } from "@storybook/addon-actions";
+import { withKnobs, select, boolean, text } from "@storybook/addon-knobs";
 
 export default {
   title: "Button",
+  decorators: [withKnobs],
 };
 
-export const base = () => (
-  <Button onClick={action("clicked")}>Base Button</Button>
-);
+export const label = () => {
+  const groupId = "Label";
+  const color = select(
+    "Color",
+    Object.keys(Color).reduce((p, c) => {
+      p[c] = Color[c];
+      return p;
+    }, {}),
+    Color.DEFAULT,
+    groupId
+  );
 
-export const disabled = () => (
-  <Button disabled onClick={action("clicked")}>
-    Disabled Button
-  </Button>
-);
+  const size = select(
+    "Size",
+    Object.keys(Size).reduce((p, c) => {
+      p[c] = Size[c];
+      return p;
+    }, {}),
+    Size.MEDIUM,
+    groupId
+  );
 
-export const colored = () => (
-  <>
-    <Button color={Color.MAIN} onClick={action("clicked")}>
-      Main Color Button
-    </Button>
-    <diiv style={{ margin: "10px" }}></diiv>
-    <Button color={Color.DARK} onClick={action("clicked")}>
-      Dark Color Button
-    </Button>
-    <diiv style={{ margin: "10px" }}></diiv>
-    <Button color={Color.LIGHT} onClick={action("clicked")}>
-      Light Color Button
-    </Button>
-    <diiv style={{ margin: "10px" }}></diiv>
-    <Button color={Color.ACCENT} onClick={action("clicked")}>
-      Accent Color Button
-    </Button>
-  </>
-);
+  const shape = select(
+    "Shape",
+    Object.keys(Shape).reduce(
+      (p, c) => {
+        p[c] = Shape[c];
+        return p;
+      },
+      { None: null }
+    ),
+    null,
+    groupId
+  );
 
-export const size = () => (
-  <>
-    <Button color={Color.MAIN} size={Size.SMALL} onClick={action("clicked")}>
-      Small Button
-    </Button>
-    <diiv style={{ margin: "10px" }}></diiv>
-    <Button color={Color.MAIN} size={Size.MEDIUM} onClick={action("clicked")}>
-      Medium Button
-    </Button>
-    <diiv style={{ margin: "10px" }}></diiv>
-    <Button color={Color.MAIN} size={Size.LARGE} onClick={action("clicked")}>
-      Large Button
-    </Button>
-  </>
-);
+  const props = {
+    color,
+    size,
+    shape,
+    block: boolean("Block", false, groupId),
+    outline: boolean("Outline", false, groupId),
+    disabled: boolean("Disabled", false, groupId),
+    children: text("Label", "Button", groupId),
+  };
 
-export const shape = () => (
-  <>
-    <Button
-      color={Color.MAIN}
-      size={Size.SMALL}
-      shape={Shape.ROUNDED}
-      onClick={action("clicked")}
-    >
-      Rounded Button
-    </Button>
-    <diiv style={{ margin: "10px" }}></diiv>
-    <Button
-      color={Color.MAIN}
-      size={Size.MEDIUM}
-      shape={Shape.SQUARE}
-      onClick={action("clicked")}
-    >
-      Square Button
-    </Button>
-    <diiv style={{ margin: "10px" }}></diiv>
-    <Button
-      color={Color.MAIN}
-      size={Size.LARGE}
-      shape={Shape.CIRCLE}
-      onClick={action("clicked")}
-    >
-      Circle Button
-    </Button>
-  </>
-);
+  return <Button {...props} onClick={action("clicked")}></Button>;
+};
 
-export const block = () => (
-  <Button block onClick={action("clicked")}>
-    Block Button
-  </Button>
-);
+export const icon = () => {
+  const groupId = "Icon";
+  const color = select(
+    "Color",
+    Object.keys(Color).reduce((p, c) => {
+      p[c] = Color[c];
+      return p;
+    }, {}),
+    Color.DEFAULT,
+    groupId
+  );
 
-export const outline = () => (
-  <>
-    <Button color={Color.DEFAULT} outline onClick={action("clicked")}>
-      Default Outline Button
-    </Button>
-    <diiv style={{ margin: "10px" }}></diiv>
-    <Button color={Color.MAIN} outline onClick={action("clicked")}>
-      Main Outline Button
-    </Button>
-    <diiv style={{ margin: "10px" }}></diiv>
-    <Button color={Color.DARK} outline onClick={action("clicked")}>
-      Dark Outline Button
-    </Button>
-    <diiv style={{ margin: "10px" }}></diiv>
-    <Button color={Color.LIGHT} outline onClick={action("clicked")}>
-      Light Outline Button
-    </Button>
-    <diiv style={{ margin: "10px" }}></diiv>
-    <Button color={Color.ACCENT} outline onClick={action("clicked")}>
-      Accent Outline Button
-    </Button>
-  </>
-);
+  const size = select(
+    "Size",
+    Object.keys(Size).reduce((p, c) => {
+      p[c] = Size[c];
+      return p;
+    }, {}),
+    Size.MEDIUM,
+    groupId
+  );
 
-export const icon = () => (
-  <>
-    <Button
-      color={Color.MAIN}
-      outline
-      icon={Icon.RIGHT}
-      onClick={action("clicked")}
-    >
-      <i className="material-icons">accessibility</i>
-      icon btn
+  const shape = select(
+    "Shape",
+    Object.keys(Shape).reduce(
+      (p, c) => {
+        p[c] = Shape[c];
+        return p;
+      },
+      { None: null }
+    ),
+    null,
+    groupId
+  );
+
+  const icon = select(
+    "Icon",
+    Object.keys(Icon).reduce((p, c) => {
+      p[c] = Icon[c];
+      return p;
+    }, {}),
+    Icon.ONLY,
+    groupId
+  );
+
+  const props = {
+    color,
+    size,
+    shape,
+    icon,
+    block: boolean("Block", false, groupId),
+    outline: boolean("Outline", false, groupId),
+    disabled: boolean("Disabled", false, groupId),
+  };
+
+  const children = text("Label", "", groupId);
+
+  return (
+    <Button {...props} onClick={action("clicked")}>
+      <i className="material-icons">android</i>
+      {children}
     </Button>
-    <diiv style={{ margin: "10px" }}></diiv>
-    <Button
-      color={Color.MAIN}
-      outline
-      icon={Icon.LEFT}
-      onClick={action("clicked")}
-    >
-      <i className="material-icons">accessibility</i>
-      icon btn
-    </Button>
-    <diiv style={{ margin: "10px" }}></diiv>
-    <Button
-      color={Color.MAIN}
-      outline
-      icon={Icon.ONLY}
-      onClick={action("clicked")}
-    >
-      <i className="material-icons">accessibility</i>
-    </Button>
-  </>
-);
+  );
+};
