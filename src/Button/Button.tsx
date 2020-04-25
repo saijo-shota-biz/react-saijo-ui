@@ -2,18 +2,6 @@ import React, { ReactNode } from "react";
 import "./Button.scss";
 import PropTypes from "prop-types";
 
-export type ButtonProp = {
-  color: Color;
-  size: Size;
-  shape: Shape;
-  block: boolean;
-  outline: boolean;
-  icon: Icon;
-  disabled: boolean;
-  children: ReactNode;
-  onClick: () => void;
-};
-
 export enum Color {
   MAIN = "Main",
   DARK = "Dark",
@@ -40,7 +28,19 @@ export enum Icon {
   ONLY = "Only",
 }
 
-const Button: React.FC<ButtonProp> = ({
+export type ButtonProp = {
+  color: Color;
+  size: Size;
+  shape: Shape;
+  block: boolean;
+  outline: boolean;
+  icon: Icon;
+  disabled: boolean;
+  children: ReactNode;
+  onClick: () => void;
+};
+
+export const Button: React.FC<ButtonProp> = ({
   color,
   size,
   shape,
@@ -72,9 +72,11 @@ const Button: React.FC<ButtonProp> = ({
 Button.defaultProps = {
   color: Color.DEFAULT,
   size: Size.MEDIUM,
+  shape: null,
   block: false,
   outline: false,
   disabled: false,
+  icon: null,
   children: "",
   onClick: () => {},
 };

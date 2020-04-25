@@ -308,9 +308,9 @@
   // disabled
   // **********************************************
   &__disabled {
-    background-color: $disabled-color;
-    color: $default-color;
-    border-color: $disabled-color;
+    background-color: $disabled-color !important;
+    color: $default-color !important;
+    border-color: $disabled-color !important;
     pointer-events: none;
   }
 }
