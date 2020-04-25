@@ -13,7 +13,6 @@
 }
 
 .el_textInput {
-  min-width: 200px;
   max-width: 100%;
   &_label {
     letter-spacing: 1px;
@@ -21,6 +20,7 @@
     width: 100%;
     padding: 1rem 0.5rem 0;
     font-size: 1.25rem;
+    color: $default-color;
   }
   &_input {
     @include reset();
@@ -30,19 +30,22 @@
     font-size: 1.25rem;
     border: solid 1.5px $default-color;
     letter-spacing: 1px;
-    &:focus {
-      border: solid 1.5px $main-color;
+  }
+
+  &__focused {
+    & > .el_textInput_label {
+      color: $main-color;
+      transition: 500ms;
     }
-    &:disabled {
-      border-color: $default-color;
-      background-color: $disabled-color;
-      color: $default-color;
+    & > .el_textInput_input {
+      border-color: $main-color;
+      transition: 500ms;
     }
   }
 
   &__disabled {
     & > .el_textInput_label {
-      color: $default-color;
+      color: $disabled-color;
     }
     & > .el_textInput_input {
       border-color: $default-color;
