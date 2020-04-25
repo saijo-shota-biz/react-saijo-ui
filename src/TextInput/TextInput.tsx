@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./TextInput.scss";
 import PropTypes from "prop-types";
 
@@ -15,19 +15,39 @@ const TextInput: React.FC<TextInputProp> = ({
   disabled,
   onChange,
 }) => {
-  const classes = [
+  const id = Math.random().toString(32).substring(2);
+
+  const [isFocus, setFocus] = useState(false);
+
+  const onFocusHandler = () => {
+    setFocus(true);
+  };
+  const onBlurHandler = () => {
+    setFocus(false);
+  };
+
+  const classNames = [
     "el_textInput",
     disabled ? "el_textInput__disabled" : "",
+    isFocus ? "el_textInput__focused" : "",
   ].join(" ");
+
   return (
-    <div className={classes}>
-      {label && <label className="el_textInput_label">{label}</label>}
+    <div className={classNames}>
+      {label && (
+        <label htmlFor={id} className="el_textInput_label">
+          {label}
+        </label>
+      )}
       <input
+        id={id}
         className="el_textInput_input"
         type="text"
         value={value}
-        onChange={onChange}
         disabled={disabled}
+        onChange={onChange}
+        onFocus={onFocusHandler}
+        onBlur={onBlurHandler}
       />
     </div>
   );
