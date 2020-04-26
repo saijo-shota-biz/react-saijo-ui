@@ -1,0 +1,59 @@
+@import "../variables";
+
+.el_textarea {
+  max-width: 100%;
+  &_label {
+    letter-spacing: 1px;
+    display: inline-block;
+    width: 100%;
+    padding: 1rem 0.5rem 0;
+    font-size: 1.25rem;
+    color: $default-color;
+  }
+
+  &_input {
+    @include reset();
+    display: inline-block;
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.25rem;
+    border: solid 1.5px $default-color;
+    letter-spacing: 1px;
+    resize: none;
+
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $default-color;
+      border-radius: 10px;
+    }
+  }
+
+  &__focused {
+    & > .el_textarea_label {
+      color: $main-color;
+      transition: 500ms;
+    }
+    & > .el_textarea_input {
+      border-color: $main-color;
+      transition: 500ms;
+    }
+  }
+
+  &__disabled {
+    & > .el_textarea_label {
+      color: $disabled-color;
+    }
+    & > .el_textarea_input {
+      border-color: $default-color;
+      background-color: $disabled-color;
+      color: $default-color;
+    }
+  }
+}
