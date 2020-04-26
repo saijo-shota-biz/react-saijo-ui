@@ -22,11 +22,11 @@ const Textarea: React.FC<TextareaProp> = ({
   const id = useMemo(() => Math.random().toString(32).substring(2), []);
 
   const [focused, setFocused] = useState(false);
-  const classnames = [
+  const classname = [
     BASE_CLASSNAME,
     disabled ? `${BASE_CLASSNAME}__disabled` : "",
     focused ? `${BASE_CLASSNAME}__focused` : "",
-  ];
+  ].join(" ");
 
   const onFocusHandler = useCallback(() => {
     setFocused(true);
@@ -37,7 +37,7 @@ const Textarea: React.FC<TextareaProp> = ({
   }, []);
 
   return (
-    <div className={classnames.join(" ")}>
+    <div className={classname}>
       {label && <label htmlFor={id}>{label}</label>}
       <textarea
         id={id}

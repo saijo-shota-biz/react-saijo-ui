@@ -53,7 +53,7 @@ export const Button: React.FC<ButtonProp> = ({
   children,
   onClick,
 }) => {
-  const classes = [
+  const classname = [
     BASE_CLASSNAME,
     `${BASE_CLASSNAME}__color${color}`,
     `${BASE_CLASSNAME}__size${size}`,
@@ -65,7 +65,7 @@ export const Button: React.FC<ButtonProp> = ({
   ].join(" ");
 
   return (
-    <a className={classes} onClick={onClick}>
+    <a className={classname} onClick={onClick}>
       {children}
     </a>
   );
