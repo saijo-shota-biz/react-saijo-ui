@@ -1,19 +1,7 @@
 @import "../_variables";
 
-@mixin reset {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  font-size: 100%;
-  vertical-align: baseline;
-  background: transparent;
-  font-weight: inherit;
-}
-
 // base
-.el_btn {
+.el_button {
   @include reset();
   display: inline-block;
   max-width: 100%;
@@ -127,7 +115,7 @@
   }
 
   &__shapeSquare {
-    &.el_btn__sizeSmall {
+    &.el_button__sizeSmall {
       min-width: 100px;
       max-width: 100px;
       min-height: 100px;
@@ -136,7 +124,7 @@
       font-size: 1rem;
     }
 
-    &.el_btn__sizeMedium {
+    &.el_button__sizeMedium {
       min-width: 200px;
       max-width: 200px;
       min-height: 200px;
@@ -145,7 +133,7 @@
       font-size: 1.125rem;
     }
 
-    &.el_btn__sizeLarge {
+    &.el_button__sizeLarge {
       min-width: 300px;
       max-width: 300px;
       min-height: 300px;
@@ -157,7 +145,7 @@
 
   &__shapeCircle {
     border-radius: 50%;
-    &.el_btn__sizeSmall {
+    &.el_button__sizeSmall {
       min-width: 100px;
       max-width: 100px;
       min-height: 100px;
@@ -166,7 +154,7 @@
       font-size: 1rem;
     }
 
-    &.el_btn__sizeMedium {
+    &.el_button__sizeMedium {
       min-width: 200px;
       max-width: 200px;
       min-height: 200px;
@@ -175,7 +163,7 @@
       font-size: 1.125rem;
     }
 
-    &.el_btn__sizeLarge {
+    &.el_button__sizeLarge {
       min-width: 300px;
       max-width: 300px;
       min-height: 300px;
@@ -207,7 +195,7 @@
       border: 0.2rem solid transparent;
     }
 
-    &.el_btn__colorDefault {
+    &.el_button__colorDefault {
       background-color: $base-color;
       color: $default-color;
 
@@ -218,7 +206,7 @@
       }
     }
 
-    &.el_btn__colorMain {
+    &.el_button__colorMain {
       background-color: $base-color;
       color: $main-color;
 
@@ -229,7 +217,7 @@
       }
     }
 
-    &.el_btn__colorDark {
+    &.el_button__colorDark {
       background-color: $base-color;
       color: $main-color-dark;
 
@@ -240,7 +228,7 @@
       }
     }
 
-    &.el_btn__colorLight {
+    &.el_button__colorLight {
       background-color: $base-color;
       color: $main-color-light;
 
@@ -251,7 +239,7 @@
       }
     }
 
-    &.el_btn__colorAccent {
+    &.el_button__colorAccent {
       background-color: $base-color;
       color: $accent-color;
 

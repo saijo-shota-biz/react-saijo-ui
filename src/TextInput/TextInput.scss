@@ -1,20 +1,8 @@
 @import "../variables";
 
-@mixin reset {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  border: none;
-  outline: none;
-  font-size: 100%;
-  vertical-align: baseline;
-  background: transparent;
-  font-weight: inherit;
-}
-
 .el_textInput {
   max-width: 100%;
-  &_label {
+  & > label {
     letter-spacing: 1px;
     display: inline-block;
     width: 100%;
@@ -22,7 +10,7 @@
     font-size: 1.25rem;
     color: $default-color;
   }
-  &_input {
+  & > input {
     @include reset();
     display: inline-block;
     width: 100%;
@@ -33,21 +21,21 @@
   }
 
   &__focused {
-    & > .el_textInput_label {
+    & > label {
       color: $main-color;
       transition: 500ms;
     }
-    & > .el_textInput_input {
+    & > input {
       border-color: $main-color;
       transition: 500ms;
     }
   }
 
   &__disabled {
-    & > .el_textInput_label {
+    & > label {
       color: $disabled-color;
     }
-    & > .el_textInput_input {
+    & > input {
       border-color: $default-color;
       background-color: $disabled-color;
       color: $default-color;

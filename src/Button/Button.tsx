@@ -40,6 +40,8 @@ export type ButtonProp = {
   onClick: () => void;
 };
 
+const BASE_CLASSNAME = "el_button";
+
 export const Button: React.FC<ButtonProp> = ({
   color,
   size,
@@ -51,19 +53,19 @@ export const Button: React.FC<ButtonProp> = ({
   children,
   onClick,
 }) => {
-  const classes = [
-    "el_btn",
-    `el_btn__color${color}`,
-    `el_btn__size${size}`,
-    shape ? `el_btn__shape${shape}` : "",
-    block ? "el_btn__block" : "",
-    outline ? "el_btn__outline" : "",
-    icon ? `el_btn__icon${icon}` : "",
-    disabled ? "el_btn__disabled" : "",
+  const classname = [
+    BASE_CLASSNAME,
+    `${BASE_CLASSNAME}__color${color}`,
+    `${BASE_CLASSNAME}__size${size}`,
+    shape ? `${BASE_CLASSNAME}__shape${shape}` : "",
+    block ? `${BASE_CLASSNAME}__block` : "",
+    outline ? `${BASE_CLASSNAME}__outline` : "",
+    icon ? `${BASE_CLASSNAME}__icon${icon}` : "",
+    disabled ? `${BASE_CLASSNAME}__disabled` : "",
   ].join(" ");
 
   return (
-    <a className={classes} onClick={onClick}>
+    <a className={classname} onClick={onClick}>
       {children}
     </a>
   );
