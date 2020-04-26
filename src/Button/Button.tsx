@@ -52,14 +52,14 @@ export const Button: React.FC<ButtonProp> = ({
   onClick,
 }) => {
   const classes = [
-    "el_btn",
-    `el_btn__color${color}`,
-    `el_btn__size${size}`,
-    shape ? `el_btn__shape${shape}` : "",
-    block ? "el_btn__block" : "",
-    outline ? "el_btn__outline" : "",
-    icon ? `el_btn__icon${icon}` : "",
-    disabled ? "el_btn__disabled" : "",
+    "el_button",
+    `el_button__color${color}`,
+    `el_button__size${size}`,
+    shape ? `el_button__shape${shape}` : "",
+    block ? "el_button__block" : "",
+    outline ? "el_button__outline" : "",
+    icon ? `el_button__icon${icon}` : "",
+    disabled ? "el_button__disabled" : "",
   ].join(" ");
 
   return (

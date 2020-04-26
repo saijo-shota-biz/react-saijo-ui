@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useMemo, useCallback } from "react";
 import "./TextInput.scss";
 import PropTypes from "prop-types";
 
@@ -9,39 +9,36 @@ export type TextInputProp = {
   onChange: () => void;
 };
 
+const BASE_CLASSNAME = "el_textInput";
+
 const TextInput: React.FC<TextInputProp> = ({
   label,
   value,
   disabled,
   onChange,
 }) => {
-  const id = Math.random().toString(32).substring(2);
+  const id = useMemo(() => Math.random().toString(32).substring(2), []);
 
-  const [isFocus, setFocus] = useState(false);
+  const [focused, setFocused] = useState(false);
+  const classnames = [
+    BASE_CLASSNAME,
+    disabled ? `${BASE_CLASSNAME}__disabled` : "",
+    focused ? `${BASE_CLASSNAME}__focused` : "",
+  ];
 
-  const onFocusHandler = () => {
-    setFocus(true);
-  };
-  const onBlurHandler = () => {
-    setFocus(false);
-  };
+  const onFocusHandler = useCallback(() => {
+    setFocused(true);
+  }, []);
 
-  const classNames = [
-    "el_textInput",
-    disabled ? "el_textInput__disabled" : "",
-    isFocus ? "el_textInput__focused" : "",
-  ].join(" ");
+  const onBlurHandler = useCallback(() => {
+    setFocused(false);
+  }, []);
 
   return (
-    <div className={classNames}>
-      {label && (
-        <label htmlFor={id} className="el_textInput_label">
-          {label}
-        </label>
-      )}
+    <div className={classnames.join(" ")}>
+      {label && <label htmlFor={id}>{label}</label>}
       <input
         id={id}
-        className="el_textInput_input"
         type="text"
         value={value}
         disabled={disabled}

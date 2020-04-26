@@ -10,6 +10,8 @@ export type TextareaProp = {
   onChange: () => void;
 };
 
+const BASE_CLASSNAME = "el_textarea";
+
 const Textarea: React.FC<TextareaProp> = ({
   label,
   value,
@@ -19,31 +21,26 @@ const Textarea: React.FC<TextareaProp> = ({
 }) => {
   const id = useMemo(() => Math.random().toString(32).substring(2), []);
 
-  const [isFocus, setFocus] = useState(false);
+  const [focused, setFocused] = useState(false);
+  const classnames = [
+    BASE_CLASSNAME,
+    disabled ? `${BASE_CLASSNAME}__disabled` : "",
+    focused ? `${BASE_CLASSNAME}__focused` : "",
+  ];
 
   const onFocusHandler = useCallback(() => {
-    setFocus(true);
-  }, []);
-  const onBlurHandler = useCallback(() => {
-    setFocus(false);
+    setFocused(true);
   }, []);
 
-  const classNames = [
-    "el_textarea",
-    disabled ? "el_textarea__disabled" : "",
-    isFocus ? "el_textarea__focused" : "",
-  ].join(" ");
+  const onBlurHandler = useCallback(() => {
+    setFocused(false);
+  }, []);
 
   return (
-    <div className={classNames}>
-      {label && (
-        <label htmlFor={id} className="el_textarea_label">
-          {label}
-        </label>
-      )}
+    <div className={classnames.join(" ")}>
+      {label && <label htmlFor={id}>{label}</label>}
       <textarea
         id={id}
-        className="el_textarea_input"
         value={value}
         rows={rows}
         disabled={disabled}
