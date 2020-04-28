@@ -1,5 +1,5 @@
-import Checkbox from "./Checkbox";
+import CheckboxGroup from "./Checkbox";
 
-export { Checkbox };
+export { CheckboxGroup };
 
-export default Checkbox;
+export default CheckboxGroup;

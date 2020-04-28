@@ -48,7 +48,7 @@ Checkbox.propTypes = {
   value: PropTypes.string.isRequired,
   checked: PropTypes.bool.isRequired,
   disabled: PropTypes.bool,
-  children: PropTypes.element,
+  children: PropTypes.node,
   onChange: PropTypes.func.isRequired,
 };
 
@@ -100,7 +100,7 @@ CheckboxGroup.defaultProps = {
 };
 
 CheckboxGroup.propTypes = {
-  items: PropTypes.exact({
+  items: PropTypes.shape({
     key: PropTypes.exact({
       label: PropTypes.string,
       checked: PropTypes.bool,
