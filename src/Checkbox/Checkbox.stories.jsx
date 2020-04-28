@@ -1,5 +1,4 @@
 import React from "react";
-import Checkbox from "./Checkbox";
 import { withKnobs } from "@storybook/addon-knobs";
 import { withInfo } from "@storybook/addon-info";
 import { useState } from "@storybook/addons";
@@ -7,7 +6,7 @@ import CheckboxGroup from "./Checkbox";
 
 export default {
   title: "Checkbox",
-  component: Checkbox,
+  component: CheckboxGroup,
   decorators: [withKnobs, withInfo],
 };
 
