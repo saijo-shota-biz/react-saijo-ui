@@ -29,11 +29,6 @@ $height: 1.85rem;
         float: right;
         color: $default-color;
       }
-
-      &__disabled {
-        background-color: $disabled-color;
-        cursor: default;
-      }
     }
 
     &_option {
