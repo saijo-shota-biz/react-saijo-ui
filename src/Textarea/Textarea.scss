@@ -2,7 +2,7 @@
 
 .el_textarea {
   max-width: 100%;
-  &_label {
+  & > label {
     letter-spacing: 1px;
     display: inline-block;
     width: 100%;
@@ -11,7 +11,7 @@
     color: $default-color;
   }
 
-  &_input {
+  & > textarea {
     @include reset();
     display: inline-block;
     width: 100%;
@@ -36,21 +36,21 @@
   }
 
   &__focused {
-    & > .el_textarea_label {
+    & > label {
       color: $main-color;
       transition: 500ms;
     }
-    & > .el_textarea_input {
+    & > textarea {
       border-color: $main-color;
       transition: 500ms;
     }
   }
 
   &__disabled {
-    & > .el_textarea_label {
+    & > label {
       color: $disabled-color;
     }
-    & > .el_textarea_input {
+    & > textarea {
       border-color: $default-color;
       background-color: $disabled-color;
       color: $default-color;
