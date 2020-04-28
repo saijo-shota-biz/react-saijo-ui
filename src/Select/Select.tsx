@@ -32,8 +32,12 @@ const Select: React.FC<SelectProp> = ({
     selectInputRef.current.blur();
   };
 
+  const classname = ["el_select", disabled ? "el_select__disabled" : ""].join(
+    " "
+  );
+
   return (
-    <div className="el_select">
+    <div className={classname}>
       <label className="el_select_label" htmlFor={id}>
         {children}
       </label>
@@ -42,11 +46,7 @@ const Select: React.FC<SelectProp> = ({
         className="el_select_input"
         ref={selectInputRef}
       >
-        <div
-          className={`el_select_input_value ${
-            disabled && "el_select_input_value__disabled"
-          }`}
-        >
+        <div className="el_select_input_value">
           {options.find((option) => option.value === selected).label}
         </div>
         <div className="el_select_input_option">

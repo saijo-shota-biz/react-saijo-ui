@@ -95,4 +95,15 @@ $height: 1.85rem;
       }
     }
   }
+
+  &__disabled {
+    & > .el_select_label {
+      color: $disabled-color;
+    }
+    & .el_select_input_value {
+      color: $default-color;
+      background-color: $disabled-color;
+      cursor: default;
+    }
+  }
 }
