@@ -1,0 +1,56 @@
+@import "../variables";
+
+.bl_modal_overlay {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: $disabled-color;
+  opacity: 0.5;
+  z-index: 999;
+  top: 0;
+  left: 0;
+}
+
+.bl_modal {
+  display: block;
+  box-sizing: border-box;
+  position: fixed;
+  background-color: $base-color;
+  z-index: 1000;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px 20px;
+  box-shadow: 0 0 10px $default-color;
+  width: 80%;
+  max-height: 90%;
+  overflow: auto;
+
+  @include scrollbar();
+
+  &_header {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    &_title {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    &_closeBtn {
+      border: none;
+      background-color: $base-color;
+      cursor: pointer;
+      outline: none;
+    }
+  }
+
+  &_body {
+    box-sizing: border-box;
+    padding: 20px 10px;
+  }
+  &_footer {
+    padding: 20px 10px;
+    box-sizing: border-box;
+  }
+}
