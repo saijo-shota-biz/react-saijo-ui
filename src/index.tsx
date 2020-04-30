@@ -6,6 +6,7 @@ import RadioGroup from "./Radio";
 import Select from "./Select";
 import Badge from "./Badge";
 import Message from "./Message";
+import Toast from "./Toast";
 
 export { Button };
 export { TextInput };
@@ -15,3 +16,4 @@ export { RadioGroup };
 export { Select };
 export { Badge };
 export { Message };
+export { Toast };
