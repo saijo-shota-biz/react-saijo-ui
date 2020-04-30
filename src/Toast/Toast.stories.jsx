@@ -30,6 +30,10 @@ export const toast = () => {
     Position.BOTTOM
   );
 
+  const onClose = () => {
+    console.log("close");
+  };
+
   return (
     <>
       <div style={{ "margin-top": "200px" }}>
@@ -40,7 +44,7 @@ export const toast = () => {
         <button onClick={() => onClick(Color.ACCENT)}>Accent</button>
       </div>
 
-      <ToastContainer ref={toastRef} position={position} />
+      <ToastContainer ref={toastRef} position={position} onClose={onClose} />
     </>
   );
 };
