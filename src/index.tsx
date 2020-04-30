@@ -5,6 +5,7 @@ import CheckboxGroup from "./Checkbox";
 import RadioGroup from "./Radio";
 import Select from "./Select";
 import Badge from "./Badge";
+import Message from "./Message";
 
 export { Button };
 export { TextInput };
@@ -13,3 +14,4 @@ export { CheckboxGroup };
 export { RadioGroup };
 export { Select };
 export { Badge };
+export { Message };
