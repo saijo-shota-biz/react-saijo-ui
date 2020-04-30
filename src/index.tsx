@@ -7,6 +7,7 @@ import Select from "./Select";
 import Badge from "./Badge";
 import Message from "./Message";
 import Toast from "./Toast";
+import Modal from "./Modal";
 
 export { Button };
 export { TextInput };
@@ -17,3 +18,4 @@ export { Select };
 export { Badge };
 export { Message };
 export { Toast };
+export { Modal };

@@ -10,7 +10,6 @@ $accent-color: #ffc107 !default;
 $default-color: #444444 !default;
 $disabled-color: #bdbdbd !default;
 
-
 $font-family: "Noto Sans JP", sans-serif !default;
 
 @mixin reset {
@@ -26,4 +25,21 @@ $font-family: "Noto Sans JP", sans-serif !default;
   font-weight: inherit;
   font-family: $font-family;
   appearance: none;
+}
+
+@mixin scrollbar {
+  &::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: $main-color-light;
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $main-color;
+    border-radius: 10px;
+  }
 }
