@@ -44,7 +44,7 @@ export default {
     copy({
       targets: [
         {
-          src: "src/*/*.scss",
+          src: "src/components/*/*.scss",
           dest: "build/scss",
         },
         {
