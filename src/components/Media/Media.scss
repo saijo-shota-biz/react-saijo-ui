@@ -1,0 +1,64 @@
+@import "../../variables";
+
+.bl_media {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 10px;
+  box-sizing: border-box;
+  color: $default-color;
+
+  &_image {
+    width: 40%;
+    object-position: 50% 50%;
+    object-fit: cover;
+    @media screen and (max-width: 750px) {
+      width: 100%;
+    }
+    &__noImage {
+      width: 40%;
+      min-height: 200px;
+      color: $base-color;
+      position: relative;
+
+      @media screen and (max-width: 750px) {
+        margin-right: 0;
+        width: 100%;
+      }
+
+      background-color: $disabled-color;
+
+      &_text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 25px;
+      }
+    }
+  }
+  &_content {
+    box-sizing: border-box;
+    width: 60%;
+    padding-left: 20px;
+    @media screen and (max-width: 750px) {
+      width: 100%;
+      padding-top: 20px;
+      padding-left: 0;
+    }
+
+    margin: auto 0;
+
+    &_header {
+      font-size: 1.25rem;
+      font-weight: bold;
+      border-bottom: solid 0.2rem $main-color;
+      border-left: solid 0.5rem $main-color;
+      padding: 10px;
+    }
+
+    &_body {
+      padding: 10px;
+    }
+  }
+}
