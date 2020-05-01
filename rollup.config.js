@@ -45,7 +45,7 @@ export default {
       targets: [
         {
           src: "src/components/*/*.scss",
-          dest: "build/scss",
+          dest: "build/components/scss",
         },
         {
           src: "src/*.scss",
