@@ -1,0 +1,45 @@
+@import "../../variables";
+
+.el_textInput {
+  max-width: 100%;
+  & > label {
+    letter-spacing: 1px;
+    display: inline-block;
+    width: 100%;
+    padding: 0.75rem 0.5rem 0;
+    font-size: 1rem;
+    color: $default-color;
+  }
+  & > input {
+    @include reset();
+    display: inline-block;
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: solid 1.5px $default-color;
+    letter-spacing: 1px;
+    color: $default-color;
+  }
+
+  &__focused {
+    & > label {
+      color: $main-color;
+      transition: 500ms;
+    }
+    & > input {
+      border-color: $main-color;
+      transition: 500ms;
+    }
+  }
+
+  &__disabled {
+    & > label {
+      color: $disabled-color;
+    }
+    & > input {
+      border-color: $default-color;
+      background-color: $disabled-color;
+      color: $default-color;
+    }
+  }
+}
