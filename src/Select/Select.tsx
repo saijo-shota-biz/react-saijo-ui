@@ -10,7 +10,7 @@ export type Option = {
 export type SelectProp = {
   options: Option[];
   selected: string;
-  disabled: boolean;
+  disabled?: boolean;
   children: ReactNode;
   onChange: (value: string) => void;
 };

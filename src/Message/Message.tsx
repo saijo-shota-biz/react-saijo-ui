@@ -11,8 +11,8 @@ export enum Color {
 }
 
 export type MessageProp = {
-  color: Color;
-  rounded: boolean;
+  color?: Color;
+  rounded?: boolean;
   children: ReactNode;
 };
 
