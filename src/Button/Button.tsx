@@ -29,13 +29,13 @@ export enum Icon {
 }
 
 export type ButtonProp = {
-  color: Color;
-  size: Size;
-  shape: Shape;
-  block: boolean;
-  outline: boolean;
-  icon: Icon;
-  disabled: boolean;
+  color?: Color;
+  size?: Size;
+  shape?: Shape;
+  block?: boolean;
+  outline?: boolean;
+  icon?: Icon;
+  disabled?: boolean;
   children: ReactNode;
   onClick: () => void;
 };
