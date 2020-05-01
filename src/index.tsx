@@ -8,6 +8,7 @@ import Badge from "./Badge";
 import Message from "./Message";
 import Toast from "./Toast";
 import Modal from "./Modal";
+import Media from "./Media";
 
 export { Button };
 export { TextInput };
@@ -19,3 +20,4 @@ export { Badge };
 export { Message };
 export { Toast };
 export { Modal };
+export { Media };
