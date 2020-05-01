@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 export type TextInputProp = {
   label?: string;
   value: string;
-  disabled: boolean;
+  disabled?: boolean;
   onChange: () => void;
 };
 

@@ -11,9 +11,9 @@ export enum Color {
 }
 
 export type BadgeProp = {
-  color: Color;
-  rounded: boolean;
-  outlined: boolean;
+  color?: Color;
+  rounded?: boolean;
+  outlined?: boolean;
   children: ReactNode;
 };
 

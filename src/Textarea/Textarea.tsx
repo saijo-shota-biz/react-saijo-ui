@@ -3,10 +3,10 @@ import "./Textarea.scss";
 import PropTypes from "prop-types";
 
 export type TextareaProp = {
-  label: string;
+  label?: string;
   value: string;
-  rows: number;
-  disabled: boolean;
+  rows?: number;
+  disabled?: boolean;
   onChange: () => void;
 };
 

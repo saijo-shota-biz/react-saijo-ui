@@ -74,7 +74,7 @@ export enum Position {
 }
 
 export type ToastContainerProp = {
-  position: Position;
+  position?: Position;
   onClose?: () => void;
 };
 
