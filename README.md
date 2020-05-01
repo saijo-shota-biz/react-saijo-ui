@@ -1,8 +1,6 @@
 # react-simplified-ui
 
-## 必須
-
-- sass
+[![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 
 ## 使い方
 
@@ -30,7 +28,7 @@ export default App;
 @import "~react-simplified-ui/build/all";
 ```
 
-## カスタマイズ
+### カスタマイズ
 
 `_variables.scss`
 
@@ -49,3 +47,7 @@ $accent-color: #ff4081;
 @import "./variables";
 @import "~react-simplified-ui/build/all";
 ```
+
+## License
+
+This software is released under the MIT License, see LICENSE.txt.
