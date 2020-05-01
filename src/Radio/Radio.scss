@@ -20,7 +20,7 @@
     position: relative;
     padding: 1rem;
     padding-left: 2rem;
-    font-size: 1.25rem;
+    font-size: 1rem;
     font-family: $font-family;
     color: $default-color;
     cursor: pointer;
@@ -40,8 +40,8 @@
     border: solid 0.125rem $main-color;
     position: absolute;
     left: 0;
-    top: 1.325rem;
-    transition: all 0.2s, border-color 0.05s;
+    top: 1.2rem;
+    transition: all 0.2s, $main-color 0.05s;
   }
 
   &_input:checked + &_label:before {

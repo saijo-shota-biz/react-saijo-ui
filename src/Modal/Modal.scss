@@ -33,9 +33,12 @@
     display: flex;
     justify-content: space-between;
     padding: 10px;
+    border-bottom: solid 0.2rem $main-color;
+    border-left: solid 0.5rem $main-color;
     &_title {
       font-size: 1.5rem;
       font-weight: bold;
+      color: $default-color;
     }
     &_closeBtn {
       border: none;

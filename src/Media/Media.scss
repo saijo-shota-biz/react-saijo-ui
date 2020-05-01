@@ -6,6 +6,8 @@
   flex-wrap: wrap;
   padding: 10px;
   box-sizing: border-box;
+  color: $default-color;
+
   &_image {
     width: 40%;
     object-position: 50% 50%;

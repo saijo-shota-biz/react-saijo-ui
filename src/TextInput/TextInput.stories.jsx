@@ -15,15 +15,13 @@ export const textinput = () => {
   const [value, setValue] = useState();
   const disabled = boolean("Disabled", false, "textInput");
   return (
-    <div style={{ width: "300px" }}>
-      <TextInput
-        label={label}
-        value={value}
-        onChange={(e) => {
-          setValue(e.target.value);
-        }}
-        disabled={disabled}
-      ></TextInput>
-    </div>
+    <TextInput
+      label={label}
+      value={value}
+      onChange={(e) => {
+        setValue(e.target.value);
+      }}
+      disabled={disabled}
+    ></TextInput>
   );
 };
