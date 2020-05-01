@@ -1,0 +1,62 @@
+@import "../variables";
+
+.el_badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: bolder;
+  padding: 0.2rem 0.5rem;
+  border: solid 1.5px transparent;
+
+  &__colorDefault {
+    color: $base-color;
+    background-color: $default-color;
+  }
+  &__colorMain {
+    color: $base-color;
+    background-color: $main-color;
+  }
+  &__colorDark {
+    color: $base-color;
+    background-color: $main-color-dark;
+  }
+  &__colorLight {
+    color: $default-color;
+    background-color: $main-color-light;
+  }
+  &__colorAccent {
+    color: $base-color;
+    background-color: $accent-color;
+  }
+
+  &__rounded {
+    border-radius: 50%;
+  }
+
+  &__outlined {
+    &.el_badge__colorDefault {
+      color: $default-color;
+      background-color: $base-color;
+      border-color: $default-color;
+    }
+    &.el_badge__colorMain {
+      color: $main-color;
+      background-color: $base-color;
+      border-color: $main-color;
+    }
+    &.el_badge__colorDark {
+      color: $main-color-dark;
+      background-color: $base-color;
+      border-color: $main-color-dark;
+    }
+    &.el_badge__colorLight {
+      color: $main-color-light;
+      background-color: $base-color;
+      border-color: $main-color-light;
+    }
+    &.el_badge__colorAccent {
+      color: $accent-color;
+      background-color: $base-color;
+      border-color: $accent-color;
+    }
+  }
+}

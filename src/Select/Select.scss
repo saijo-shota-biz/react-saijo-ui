@@ -1,0 +1,105 @@
+@import "../variables";
+
+$font-size: 1rem;
+$height: 1.25rem;
+
+.el_select {
+  color: $default-color;
+  &_label {
+    letter-spacing: 1px;
+    display: inline-block;
+    width: 100%;
+    padding: 0.75rem 0.5rem 0;
+    font-size: $font-size;
+    color: $default-color;
+  }
+  &_input {
+    &_value {
+      border: solid 1.5px $default-color;
+      padding: 0.75rem;
+      cursor: pointer;
+      color: $default-color;
+      outline: none;
+      height: $height;
+      font-size: $font-size;
+
+      &::after {
+        font-family: "Material Icons";
+        content: "\e313";
+        font-size: $height;
+        float: right;
+        color: $default-color;
+      }
+    }
+
+    &_option {
+      border: solid 1.5px transparent;
+
+      &_item {
+        overflow: hidden;
+        height: 0;
+        transition: 0.2s;
+
+        &_input {
+          display: none;
+        }
+
+        &_label {
+          padding: 0 0.5rem;
+          height: $height;
+          font-size: $font-size;
+        }
+      }
+    }
+
+    &:focus {
+      outline: none;
+
+      & > .el_select_input_value {
+        border-color: $main-color;
+
+        &::after {
+          font-family: "Material Icons";
+          content: "\e316";
+          color: $main-color;
+        }
+      }
+      & > .el_select_input_option {
+        border: solid 1.5px $main-color;
+        border-top: transparent;
+
+        & > .el_select_input_option_item {
+          overflow: visible;
+          height: 1.75rem;
+          transition: 0.2s;
+          padding: 0 0 0.5rem;
+
+          & > .el_select_input_option_item_label {
+            display: block;
+            padding: 0.5rem 1rem;
+            height: $height;
+            font-size: $font-size;
+            cursor: pointer;
+
+            &:hover {
+              border-color: $main-color;
+              background-color: $main-color;
+              color: $base-color;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__disabled {
+    & > .el_select_label {
+      color: $disabled-color;
+    }
+    & .el_select_input_value {
+      color: $default-color;
+      background-color: $disabled-color;
+      cursor: default;
+    }
+  }
+}

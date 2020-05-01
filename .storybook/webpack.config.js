@@ -14,6 +14,39 @@ module.exports = async ({ config, mode }) => {
       presets: [["react-app", { flow: false, typescript: true }]],
     },
   });
+
+  config.module.rules.push({
+    test: /\.tsx?$/,
+    include: path.resolve(__dirname, "../src"),
+    use: [
+      {
+        loader: require.resolve("react-docgen-typescript-loader"),
+        options: {
+          tsconfigPath: path.resolve(__dirname, "../tsconfig.json"),
+        },
+      },
+    ],
+  });
+
+  config.module.rules.push({
+    test: /\.stories\.jsx?$/,
+    loaders: [
+      {
+        loader: require.resolve("@storybook/source-loader"),
+        options: {
+          parser: "typescript",
+          prettierConfig: {
+            trailingComma: "es5",
+            tabWidth: 2,
+            semi: true,
+            singleQuote: false,
+          },
+        },
+      },
+    ],
+    enforce: "pre",
+  });
+
   config.resolve.extensions.push(".ts", ".tsx");
 
   return config;

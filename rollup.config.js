@@ -3,6 +3,7 @@ import resolve from "rollup-plugin-node-resolve";
 import typescript from "rollup-plugin-typescript2";
 import sass from "rollup-plugin-sass";
 import commonjs from "rollup-plugin-commonjs";
+import copy from "rollup-plugin-copy";
 
 import packageJson from "./package.json";
 
@@ -39,8 +40,18 @@ export default {
         "node_modules/react-dom/index.js": ["render"],
       },
     }),
-    sass({
-      insert: true,
+    sass(),
+    copy({
+      targets: [
+        {
+          src: "src/*/*.scss",
+          dest: "build/scss",
+        },
+        {
+          src: "src/*.scss",
+          dest: "build",
+        },
+      ],
     }),
   ],
 };

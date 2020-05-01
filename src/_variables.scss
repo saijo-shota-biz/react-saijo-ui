@@ -1,0 +1,45 @@
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap");
+
+// base-color
+$base-color: #ffffff !default;
+$main-color-dark: #0097a7 !default;
+$main-color: #00bcd4 !default;
+$main-color-light: #b2ebf2 !default;
+$accent-color: #ffc107 !default;
+$default-color: #757575 !default;
+$disabled-color: #bdbdbd !default;
+
+$font-family: "Noto Sans JP", sans-serif !default;
+
+@mixin reset {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  font-weight: inherit;
+  font-family: $font-family;
+  appearance: none;
+}
+
+@mixin scrollbar {
+  &::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: $main-color-light;
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $main-color;
+    border-radius: 10px;
+  }
+}
