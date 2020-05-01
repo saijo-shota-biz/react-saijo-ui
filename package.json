@@ -1,5 +1,5 @@
 {
-  "name": "@saijo-shota-biz/react-simplified-ui",
+  "name": "react-simplified-ui",
   "version": "0.1.0",
   "description": "react simple component library",
   "main": "build/index.js",
