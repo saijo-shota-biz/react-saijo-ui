@@ -5,7 +5,7 @@
   @include reset();
   display: inline-block;
   max-width: 100%;
-  border: 0.2rem solid transparent;
+  border: solid 1.5px transparent;
   text-decoration: none;
   text-align: center;
   transition: 0.25s;
@@ -23,8 +23,8 @@
 
   // size
   min-width: 200px;
-  padding: 1rem 0.75rem;
-  font-size: 1.125rem;
+  padding: 0.75rem 0.5rem;
+  font-size: 1rem;
 
   cursor: pointer;
 
@@ -66,7 +66,7 @@
 
   &__colorLight {
     background-color: $main-color-light;
-    color: $base-color;
+    color: $default-color;
 
     &:focus,
     &:hover {
@@ -91,20 +91,20 @@
   // **********************************************
   &__sizeSmall {
     min-width: 100px;
-    padding: 0.75rem 0.5rem;
-    font-size: 1rem;
+    padding: 0.625rem 0.375rem;
+    font-size: 0.875rem;
   }
 
   &__sizeMedium {
     min-width: 200px;
-    padding: 1rem 0.75rem;
-    font-size: 1.125rem;
+    padding: 0.75rem 0.5rem;
+    font-size: 1rem;
   }
 
   &__sizeLarge {
     min-width: 300px;
-    padding: 1.25rem 1rem;
-    font-size: 1.25rem;
+    padding: 0.875rem 0.625rem;
+    font-size: 1.125rem;
   }
 
   // **********************************************
@@ -120,8 +120,8 @@
       max-width: 100px;
       min-height: 100px;
       max-height: 100px;
-      padding: 0.75rem 0.5rem;
-      font-size: 1rem;
+      padding: 0.625rem 0.375rem;
+      font-size: 0.875rem;
     }
 
     &.el_button__sizeMedium {
@@ -129,8 +129,8 @@
       max-width: 200px;
       min-height: 200px;
       max-height: 200px;
-      padding: 1rem 0.75rem;
-      font-size: 1.125rem;
+      padding: 0.75rem 0.5rem;
+      font-size: 1rem;
     }
 
     &.el_button__sizeLarge {
@@ -138,8 +138,8 @@
       max-width: 300px;
       min-height: 300px;
       max-height: 300px;
-      padding: 1.25rem 1rem;
-      font-size: 1.25rem;
+      padding: 0.875rem 0.625rem;
+      font-size: 1.125rem;
     }
   }
 
@@ -150,8 +150,8 @@
       max-width: 100px;
       min-height: 100px;
       max-height: 100px;
-      padding: 0.75rem 0.5rem;
-      font-size: 1rem;
+      padding: 0.625rem 0.375rem;
+      font-size: 0.875rem;
     }
 
     &.el_button__sizeMedium {
@@ -159,8 +159,8 @@
       max-width: 200px;
       min-height: 200px;
       max-height: 200px;
-      padding: 1rem 0.75rem;
-      font-size: 1.125rem;
+      padding: 0.75rem 0.5rem;
+      font-size: 1rem;
     }
 
     &.el_button__sizeLarge {
@@ -168,8 +168,8 @@
       max-width: 300px;
       min-height: 300px;
       max-height: 300px;
-      padding: 1.25rem 1rem;
-      font-size: 1.25rem;
+      padding: 0.875rem 0.625rem;
+      font-size: 1.125rem;
     }
   }
 
@@ -192,7 +192,7 @@
     &:hover {
       background-color: $default-color;
       color: $base-color;
-      border: 0.2rem solid transparent;
+      border: solid 1.5px transparent;
     }
 
     &.el_button__colorDefault {

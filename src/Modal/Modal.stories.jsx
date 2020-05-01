@@ -55,7 +55,7 @@ export const modal = () => {
       <Modal
         open={open}
         onClose={onClose}
-        header={<h2>お問い合わせ</h2>}
+        header="お問い合わせ"
         body={
           <>
             <TextInput

@@ -6,8 +6,8 @@
     letter-spacing: 1px;
     display: inline-block;
     width: 100%;
-    padding: 1rem 0.5rem 0;
-    font-size: 1.25rem;
+    padding: 0.75rem 0.5rem 0;
+    font-size: 1rem;
     color: $default-color;
   }
 
@@ -15,24 +15,14 @@
     @include reset();
     display: inline-block;
     width: 100%;
-    padding: 1rem;
-    font-size: 1.25rem;
+    padding: 0.5rem;
+    font-size: 1rem;
     border: solid 1.5px $default-color;
     letter-spacing: 1px;
     resize: none;
+    color: $default-color;
 
-    &::-webkit-scrollbar {
-      width: 5px;
-    }
-
-    &::-webkit-scrollbar-track {
-      border-radius: 10px;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      background-color: $default-color;
-      border-radius: 10px;
-    }
+    @include scrollbar();
   }
 
   &__focused {
