@@ -62,19 +62,18 @@ export type Item = {
 
 export type RadioGroupProp = {
   items: Item;
-  setItem: (update: (prevState: Item) => Item) => void;
+  setItem: (item: Item) => void;
 };
 
 const RadioGroup: React.FC<RadioGroupProp> = ({ items, setItem }) => {
   const name = useMemo(() => Math.random().toString(32).substring(2), []);
 
   const onChangeHandler = useCallback((selectedKey) => {
-    setItem((state: Item) => {
-      return Object.entries(state).reduce((p, [key, value]) => {
-        p[key] = { ...value, checked: key === selectedKey };
-        return p;
-      }, {});
-    });
+    const newItem: Item = Object.entries(items).reduce((p, [key, value]) => {
+      p[key] = { ...value, checked: key === selectedKey };
+      return p;
+    }, {});
+    setItem(newItem);
   }, []);
 
   return (

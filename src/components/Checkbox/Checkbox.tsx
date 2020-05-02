@@ -62,18 +62,16 @@ export type Item = {
 
 export type CheckboxGroupProp = {
   items: Item;
-  setItem: (update: (prevState: Item) => Item) => void;
+  setItem: (item: Item) => void;
 };
 
 const CheckboxGroup: React.FC<CheckboxGroupProp> = ({ items, setItem }) => {
   const name = useMemo(() => Math.random().toString(32).substring(2), []);
 
   const onChangeHandler = useCallback((value) => {
-    setItem((state: Item) => {
-      const changedValue = state[value];
-      changedValue.checked = !changedValue.checked;
-      return { ...state, [value]: changedValue };
-    });
+    const newItem = items[value];
+    newItem.checked = !newItem.checked;
+    setItem({ ...items, [value]: newItem });
   }, []);
 
   return (
