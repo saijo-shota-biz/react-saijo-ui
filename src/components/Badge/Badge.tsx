@@ -2,6 +2,7 @@ import React, { ReactNode } from "react";
 import "./Badge.scss";
 import PropTypes from "prop-types";
 import { Color } from "../../enum/Color";
+import classnames from "../../util/classname";
 
 export type BadgeProp = {
   color: Color;
@@ -10,13 +11,15 @@ export type BadgeProp = {
   children: ReactNode;
 };
 
+const BASE_CLASSNAME = "el_badge";
+
 const Badge: React.FC<BadgeProp> = ({ color, rounded, outlined, children }) => {
-  const classname = [
-    "el_badge",
-    `el_badge__color${color}`,
-    rounded ? "el_badge__rounded" : "",
-    outlined ? "el_badge__outlined" : "",
-  ].join(" ");
+  const classname = classnames([
+    [BASE_CLASSNAME],
+    [`${BASE_CLASSNAME}__color${color}`, !!color],
+    [`${BASE_CLASSNAME}__rounded`, rounded],
+    [`${BASE_CLASSNAME}__outlined`, outlined],
+  ]);
 
   return <a className={classname}>{children}</a>;
 };

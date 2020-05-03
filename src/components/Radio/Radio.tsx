@@ -1,6 +1,7 @@
 import React, { useMemo, ReactNode, useCallback } from "react";
 import "./Radio.scss";
 import PropTypes from "prop-types";
+import uniqueId from "../../util/uniqueId";
 
 type RadioProp = {
   groupName: string;
@@ -19,7 +20,7 @@ const Radio: React.FC<RadioProp> = ({
   children,
   onChange,
 }) => {
-  const id = useMemo(() => Math.random().toString(32).substring(2), []);
+  const id = useMemo(() => uniqueId(), []);
   const onClickHandler = useCallback(() => {
     onChange(value);
   }, []);
@@ -66,7 +67,7 @@ export type RadioGroupProp = {
 };
 
 const RadioGroup: React.FC<RadioGroupProp> = ({ items, setItem }) => {
-  const name = useMemo(() => Math.random().toString(32).substring(2), []);
+  const name = useMemo(() => uniqueId(), []);
 
   const onChangeHandler = useCallback((selectedKey) => {
     const newItem: Item = Object.entries(items).reduce((p, [key, value]) => {

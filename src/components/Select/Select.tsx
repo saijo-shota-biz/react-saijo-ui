@@ -1,6 +1,8 @@
 import React, { ReactNode, useMemo, useRef } from "react";
 import "./Select.scss";
 import PropTypes from "prop-types";
+import uniqueId from "../../util/uniqueId";
+import classnames from "../../util/classname";
 
 export type Option = {
   value: string;
@@ -22,8 +24,8 @@ const Select: React.FC<SelectProp> = ({
   children,
   onChange,
 }) => {
-  const id = useMemo(() => Math.random().toString(32).substring(2), []);
-  const name = useMemo(() => Math.random().toString(32).substring(2), []);
+  const id = useMemo(() => uniqueId(), []);
+  const name = useMemo(() => uniqueId(), []);
 
   const selectInputRef = useRef(null);
 
@@ -32,9 +34,10 @@ const Select: React.FC<SelectProp> = ({
     selectInputRef.current.blur();
   };
 
-  const classname = ["el_select", disabled ? "el_select__disabled" : ""].join(
-    " "
-  );
+  const classname = classnames([
+    ["el_select"],
+    ["el_select__disabled", disabled],
+  ]);
 
   return (
     <div className={classname}>

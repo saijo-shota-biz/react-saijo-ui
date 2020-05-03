@@ -8,6 +8,8 @@ import "./Toast.scss";
 import PropTypes from "prop-types";
 import { Color } from "../../enum/Color";
 import { ToastPosition } from "../../enum/ToastPosition";
+import uniqueId from "../../util/uniqueId";
+import classnames from "../../util/classname";
 
 export type ToastProp = {
   id: string;
@@ -24,7 +26,10 @@ export const Toast: React.FC<ToastProp> = ({
   message,
   onClose,
 }) => {
-  const classname = ["el_toast", `el_toast__color${color}`].join(" ");
+  const classname = classnames([
+    ["el_toast"],
+    [`el_toast__color${color}`, !!color],
+  ]);
 
   setTimeout(() => {
     onClose(id);
@@ -75,7 +80,7 @@ const ToastContainer: React.FC<ToastContainerProp> = forwardRef(
       add(toast: ToastDetail) {
         const t = {
           ...toast,
-          id: Math.random().toString(32).substring(2),
+          id: uniqueId(),
         };
         if (position === ToastPosition.TOP) {
           setToasts([t, ...toasts]);
@@ -93,10 +98,10 @@ const ToastContainer: React.FC<ToastContainerProp> = forwardRef(
       [toasts]
     );
 
-    const classname = [
-      "el_toast_container",
-      `el_toast_container__position${position}`,
-    ].join(" ");
+    const classname = classnames([
+      ["el_toast_container"],
+      [`el_toast_container__position${position}`, !!position],
+    ]);
 
     return (
       <div className={classname}>

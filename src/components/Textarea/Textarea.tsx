@@ -1,6 +1,8 @@
 import React, { useState, useMemo, useCallback } from "react";
 import "./Textarea.scss";
 import PropTypes from "prop-types";
+import uniqueId from "../../util/uniqueId";
+import classnames from "../../util/classname";
 
 export type TextareaProp = {
   label?: string;
@@ -19,14 +21,15 @@ const Textarea: React.FC<TextareaProp> = ({
   disabled,
   onChange,
 }) => {
-  const id = useMemo(() => Math.random().toString(32).substring(2), []);
+  const id = useMemo(() => uniqueId(), []);
 
   const [focused, setFocused] = useState(false);
-  const classname = [
-    BASE_CLASSNAME,
-    disabled ? `${BASE_CLASSNAME}__disabled` : "",
-    focused ? `${BASE_CLASSNAME}__focused` : "",
-  ].join(" ");
+
+  const classname = classnames([
+    [BASE_CLASSNAME],
+    [`${BASE_CLASSNAME}__disabled`, disabled],
+    [`${BASE_CLASSNAME}__focused`, focused],
+  ]);
 
   const onFocusHandler = useCallback(() => {
     setFocused(true);
