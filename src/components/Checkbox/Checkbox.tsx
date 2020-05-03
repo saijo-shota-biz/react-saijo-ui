@@ -1,6 +1,7 @@
 import React, { useMemo, ReactNode, useCallback } from "react";
 import "./Checkbox.scss";
 import PropTypes from "prop-types";
+import uniqueId from "../../util/uniqueId";
 
 type CheckboxProp = {
   groupName: string;
@@ -19,7 +20,7 @@ const Checkbox: React.FC<CheckboxProp> = ({
   children,
   onChange,
 }) => {
-  const id = useMemo(() => Math.random().toString(32).substring(2), []);
+  const id = useMemo(() => uniqueId(), []);
   const onClickHandler = useCallback(() => {
     onChange(value);
   }, []);
@@ -66,7 +67,7 @@ export type CheckboxGroupProp = {
 };
 
 const CheckboxGroup: React.FC<CheckboxGroupProp> = ({ items, setItem }) => {
-  const name = useMemo(() => Math.random().toString(32).substring(2), []);
+  const name = useMemo(() => uniqueId(), []);
 
   const onChangeHandler = useCallback((value) => {
     const newItem = items[value];

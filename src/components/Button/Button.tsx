@@ -5,6 +5,7 @@ import { Color } from "../../enum/Color";
 import { Size } from "../../enum/Size";
 import { Shape } from "../../enum/Shape";
 import { IconPosition } from "../../enum/IconPosition";
+import classnames from "../../util/classname";
 
 export type ButtonProp = {
   color?: Color;
@@ -31,16 +32,16 @@ export const Button: React.FC<ButtonProp> = ({
   children,
   onClick,
 }) => {
-  const classname = [
-    BASE_CLASSNAME,
-    `${BASE_CLASSNAME}__color${color}`,
-    `${BASE_CLASSNAME}__size${size}`,
-    shape ? `${BASE_CLASSNAME}__shape${shape}` : "",
-    block ? `${BASE_CLASSNAME}__block` : "",
-    outline ? `${BASE_CLASSNAME}__outline` : "",
-    icon ? `${BASE_CLASSNAME}__icon${icon}` : "",
-    disabled ? `${BASE_CLASSNAME}__disabled` : "",
-  ].join(" ");
+  const classname = classnames([
+    [BASE_CLASSNAME],
+    [`${BASE_CLASSNAME}__color${color}`],
+    [`${BASE_CLASSNAME}__size${size}`],
+    [`${BASE_CLASSNAME}__shape${shape}`, !!shape],
+    [`${BASE_CLASSNAME}__block`, !!block],
+    [`${BASE_CLASSNAME}__outline`, outline],
+    [`${BASE_CLASSNAME}__icon${icon}`, !!icon],
+    [`${BASE_CLASSNAME}__disabled`, disabled],
+  ]);
 
   return (
     <a className={classname} onClick={onClick}>
