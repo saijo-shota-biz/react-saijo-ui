@@ -2,6 +2,7 @@ import React, { useState, useCallback, ReactNode } from "react";
 import "./Message.scss";
 import PropTypes from "prop-types";
 import { Color } from "../../enum/Color";
+import classnames from "../../util/classname";
 
 export type MessageProp = {
   color?: Color;
@@ -9,12 +10,14 @@ export type MessageProp = {
   children: ReactNode;
 };
 
+const BASE_CLASSNAME = "el_message";
+
 const Message: React.FC<MessageProp> = ({ color, rounded, children }) => {
-  const classname = [
-    "el_message",
-    `el_message__color${color}`,
-    rounded ? "el_message__rounded" : "",
-  ].join(" ");
+  const classname = classnames([
+    [BASE_CLASSNAME],
+    [`${BASE_CLASSNAME}__color${color}`, !!color],
+    [`${BASE_CLASSNAME}__rounded`, rounded],
+  ]);
 
   const [open, setOpen] = useState(true);
 
