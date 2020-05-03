@@ -2,7 +2,6 @@
 
 // base
 .el_button {
-  @include reset();
   display: inline-block;
   max-width: 100%;
   border: solid 1.5px transparent;
@@ -252,14 +251,19 @@
   }
 
   // **********************************************
-  // disabled
+  // icon
   // **********************************************
+
+  > i {
+    font-size: 1rem;
+  }
+
   &__iconOnly {
     position: relative;
-    padding: 1.85rem 0;
+    padding: 1.5rem 0;
     vertical-align: middle;
     & > i {
-      font-size: 1.5rem;
+      font-size: 1rem;
       position: absolute;
       top: 50%;
       left: 50%;
@@ -268,12 +272,13 @@
   }
   &__iconRight {
     position: relative;
+    padding: 1.5rem 0;
     padding-right: 2.3rem;
     padding-left: 2.3rem;
 
     & > i {
       position: absolute;
-      font-size: 1.5rem;
+      font-size: 1rem;
       top: 50%;
       right: 0.5rem;
       transform: translateY(-50%);
@@ -282,12 +287,13 @@
 
   &__iconLeft {
     position: relative;
+    padding: 1.5rem 0;
     padding-right: 2.3rem;
     padding-left: 2.3rem;
 
     & > i {
       position: absolute;
-      font-size: 1.5rem;
+      font-size: 1rem;
       top: 50%;
       left: 0.5rem;
       transform: translateY(-50%);
