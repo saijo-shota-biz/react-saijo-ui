@@ -2,6 +2,12 @@
 
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 
+## インストール
+
+```bash
+$ npm install react-simplified-ui
+```
+
 ## 使い方
 
 `App.tsx`
@@ -14,7 +20,13 @@ import { Button } from "react-simplified-ui";
 function App() {
   return (
     <div className="App">
-      <Button>Test Button</Button>
+      <Button
+        onClick={() => {
+          console.log("clicked");
+        }}
+      >
+        Test Button
+      </Button>
     </div>
   );
 }
@@ -33,7 +45,6 @@ export default App;
 `_variables.scss`
 
 ```scss
-// base-color
 $base-color: #ffffff;
 $main-color-dark: #00796b;
 $main-color: #009688;
