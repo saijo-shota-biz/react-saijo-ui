@@ -4,6 +4,8 @@
 
 ## 使い方
 
+`npm install react-simplified-ui`
+
 `App.tsx`
 
 ```tsx
