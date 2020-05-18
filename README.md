@@ -10,6 +10,8 @@ $ npm install react-simplified-ui
 
 ## 使い方
 
+`npm install react-simplified-ui`
+
 `App.tsx`
 
 ```tsx
@@ -61,4 +63,4 @@ $accent-color: #ff4081;
 
 ## License
 
-This software is released under the MIT License, see LICENSE.txt.
+This software is released under the MIT License, see LICENSE .
