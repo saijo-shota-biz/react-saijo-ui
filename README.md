@@ -50,4 +50,4 @@ $accent-color: #ff4081;
 
 ## License
 
-This software is released under the MIT License, see LICENSE.txt.
+This software is released under the MIT License, see LICENSE .
